@@ -35,25 +35,24 @@ RAML 是基于 `JSON` 进行描述的，它会将文章正文转换成一个 `JS
 ``` json
 [
     {
-      "id":"935d", // 段落的标示，在一篇文章中，唯一标示一段
-      "type":0, // 段落的类型，包含文本、图片、视频、音频，等等，不同类型对应不同明细
-      "text":"这里是文本类型的正文", // 段落的文本内容
+      "id":"935d",
+      "type":0,
+      "text":"这里是文本类型的正文",
 
-      // 标签列表，可以作用在不同的元素上
       "markups":[
         {
-          "tag":"small", // Rich text tag 的标示，类似于 Html 
-          "start":4, // Tag 作用的起始位置
-          "end":8, // Tag 作用的终止位置
-          "source":"http://ifttt.com/medium", // Tag 的链接
-          "width":0, // Tag 的宽，对于文本中的内嵌图片生效
-          "height":0 // Tag 的高，对于文本中的内嵌图片生效
+          "tag":"small",
+          "start":4,
+          "end":8,
+          "source":"http://ifttt.com/medium",
+          "width":0,
+          "height":0
         }
       ]
     },
     {
       "id":"4231", 
-      "type":1, // 图片类型
+      "type":1,
       "image": {
         "width":720,
         "height":480,
@@ -78,35 +77,34 @@ RAML 中每一个 List 的元素，都是一个段落，其中包含一系列的
 每个段落，会有一个类型，它用来指明该段落的主体内容，不同的 type 其主要内容字段会有所不同。比如，如果是文本类型，内容存储在 text 标记中；如果是图片类型，则存储在 image 标记中。
 
 目前支持的 type 包括：
-* 0 - 文本。内容在 text 中；
-* 1 - 单图。内容在 image 中；
-* 2 - 视频。内容在 media 中；
-* 3 - 音频。内容在 media 中；
-* 4 - 表格。内容在 table 中；
-* 5 - 图集（暂不支持）
-* 10 - 空行符。无内容，视觉上为了增加段落间隔；
-* 11 - 分隔符。无内容，视觉上有一个分隔图标；
+* `0` 文本。内容在 text 中；
+* `1` 单图。内容在 image 中；
+* `2` 视频。内容在 media 中；
+* `3` 音频。内容在 media 中；
+* `4` 表格。内容在 table 中；
+* `10` 空行符。无内容，视觉上为了增加段落间隔；
+* `11` 分隔符。无内容，视觉上有一个分隔图标；
 
 ##### text
 一个 `JSON Object`，富文本内容，包括：
-* text。纯文本的 text 字段，段落中的文字内容；
-* markups。辅助的标记信息，参看后面文本标记的介绍；
+* `text`。纯文本的 text 字段，段落中的文字内容；
+* `markups`。辅助的标记信息，参看后面文本标记的介绍；
 
 #### image
 一个 `JSON Object`，包括：
-* source。图片的 url 地址；
-* width。图片的宽度，整形，单位是 px；
-* height。图片的高度，整形，单位是 px；
+* `source`。图片的 url 地址；
+* `width`。图片的宽度，整形，单位是 px；
+* `height`。图片的高度，整形，单位是 px；
 
 #### media
 一个 `JSON Object`，包括：
-* source。视频的 url 地址；
-* cover。视频的 cover 图片地址；
+* `source`。视频的 url 地址；
+* `cover`。视频的 cover 图片地址；
 
 #### table
 一个 `JSON Object`，包括：
-* rowCount
-* colCount
+* `rowCount`
+* `colCount`
 
 ### 段落样式标记
 在 text/image 等 `JSON Object` 中，还会有一些包含和段落样式相关的标记，包括如下这些。
