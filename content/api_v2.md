@@ -11,6 +11,7 @@
   - [app.get](#appget)
 - [分类（Category）](#分类（category）)
   - [category.list](#categorylist)
+  - [category.get](#categoryget)
 - [文章（Article）](#文章（article）)
   - [article.list](#articlelist)
   - [article.dump](#articledump)
@@ -170,18 +171,18 @@ TODO 需要举个例子，便于测试
   "type": "interest",
   "name": "分类名",
   "icon": "http://a_icon_for_partener",
-  "desc": "分类的描述",
+  "description": "分类的描述",
 
-  "channels": [{
-    "id": 50,
-    "title": "频道名称"
+  "subCategories": [{
+    "categoryId": "p50",
+    "title": "子分类的名称"
   }]
 }
 ```
 
 其中：
-* `categoryId` 是该分类的 id，`type` 是该分类的类型，包括：`interest`，`app`，`content`，等。此外，还包含 `name`，`icon`，等基本信息；
-* 在部分分类下，还可能包含更具体的 `channels` 信息，比如，一个应用就可能包含多个不同频道的内容；
+* `categoryId` 是该分类的 id，`type` 是该分类的类型，包括：`interest`，`app`，`content`，等。此外，还包含 `name`，`icon`，等基本信息（可能空）；
+* 在部分分类下，还可能包含更具体的 `subCategories`，说明这个分类下面还有子分类，可以用子分类来获取它对应的 Timeline 信息，比如，一个应用就可能包含多个不同频道的内容；
 
 ### category.list
 获得提供给该合作伙伴的全部分类列表。
@@ -200,9 +201,7 @@ TODO 需要举个例子，便于测试
     "categoryId": "assigned_category_id",
     "type": "interest",
     "icon": "http://a_icon_for_partener",
-    "desc": "分类的描述",
-
-    "latestUpdated": 139000000000,
+    "description": "分类的描述",
   }],
   "hasMore": false
 }
@@ -210,24 +209,49 @@ TODO 需要举个例子，便于测试
 
 请求成功后，会返回 `categories` 的列表。
 
+### category.get
+获得具体 Category 的详细信息。
+
+#### 参数
+
+| 参数 | 类型 | 是否必须 | 示例 | 其它说明 |
+|:--|:--|:--|:--|:--|
+| token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
+| category_id | string | 是 | i1234 | 已知的特定分类的 ID 信息 |
+
+#### 返回
+```json
+{
+  "ok": true,
+  "category": {
+    "categoryId": "assigned_category_id",
+    "type": "interest",
+    "icon": "http://a_icon_for_partener",
+    "description": "分类的描述",
+  },
+  "hasMore": false
+}
+```
+
+请求成功后，会返回对应的 `category`。
+
 ## 文章（Article）
 文章（Article）指的是一个页面的正文内容，轻芒提供 APIs，将源站中提取出结构化的信息。
 
 一个文章，会用如下的 Json Object 来表示：
 ```json
 {
-  "articleId": 251,
+  "articleId": -8379746561699078860,
 
-  "title": "这是文章的标题",
-  "desc": "这是文章的描述信息",
-  "snippet": "这是文章的摘要信息",
-  "author": "文章的作者",
-  "publishTimestamp": 140000000000,
-  "crawlerTimestamp": 140000000000,
-  "cover": [{
-    "url": "http://link_to_image",
-    "width": 1024,
-    "height": 2048
+  "title": "三星Galaxy S8/S8+上手体验",
+  "snippet": "转眼又到2017年的春季，S系列终于有机会上头条，Galaxy S8有没有一雪前耻，更进一步呢？这是我们将要探究的内容。",
+  "author": "科技美学",
+  "publishTimestamp": 1490803200000,
+  "crawlerTimestamp": 1490893250880,
+  "covers": [{
+    "url": "http://qiniuimg.qingmang.mobi/image/orion/d534586e7e0f28f2deb1bcda253f9e1a_1920_1080.jpeg",
+    "height": 1080,
+    "width": 1920
   }],
   "images": [{
     "url": "http://link_to_image",
@@ -235,31 +259,34 @@ TODO 需要举个例子，便于测试
     "height": 2048
   }],
   "videos": [{
-    "url": "http://link_to_video",
-    "width": 1024,
-    "height": 2048,
-    "duration": 60
+    "url": "http://api.qingmang.me/v1/video.redirect?url=https://v.qq.com/iframe/preview.html?vid%3Di0388m50vls%26width%3D500%26height%3D375%26auto%3D0",
+    "duration": 501.12,
+    "width": 1920,
+    "height": 1072
+  }],
+  "musics": [{
+    "url": "http://res.wx.qq.com/voice/getvoice?mediaid=MjM5ODQwNDQxNF8yNjUwNjk2MTIx",
+    "name": "2017.03.30"
   }],
   "tags": ["美食"],
   "templateType": "text",
-  "interestId": 5306,
-  "channels": [{
-    "id": 50,
-    "title": "频道名称"
+  "categories": [{
+    "categoryId": "p50",
+    "title": "科技美学"
   }],
-  "contentUrl": "轻芒提供的文章链接",
+  "contentUrl": "http://qingmang.me/articles/-8379746561699078860",
 
   "webUrl": "文章的原文链接",
   "appUrl": "文章在应用中打开的链接",
-  "providerName": "源站名字",
-  "providerIcon": "http://link_to_icon",
-  "providerPackageName": "源站包名",
+  "providerName": "科技美学",
+  "providerIcon": "http://img.wdjimg.com/image/orion/e7b233d4c4d93c9c5411429d1b66a7cd_292_292.jpeg",
+  "providerPackageName": "org.wandoujia.mp.kejimx",
 
   "contentFormat": "raml",
   "content": "正文内容",
   "keywords": [{
-    "word": "早餐",
-    "score": 0.25
+    "word": "s8",
+    "score": 100
   }]
 }
 ```
@@ -287,27 +314,57 @@ TODO 需要举个例子，便于测试
 | 参数 | 类型 | 是否必须 | 示例 | 其它说明 |
 |:--|:--|:--|:--|:--|
 | token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
-| category | string | 是 | i1567 | 从 `category.list` 中获取的 `categoryId` 信息 |
+| category_id | string | 是 | i1567 | 从 `category.list` 中获取的 `categoryId` 信息，或者 `subCategories` 中的 ID 信息 |
 
 #### 返回
 ```json
 {
   "ok": true,
   "articles": [{
-    "articleId": 251,
+    "title": "三星Galaxy S8/S8+上手体验",
+    "snippet": "转眼又到2017年的春季，S系列终于有机会上头条，Galaxy S8有没有一雪前耻，更进一步呢？这是我们将要探究的内容。",
+    "author": "科技美学",
+    "publishTimestamp": 1490803200000,
+    "crawlerTimestamp": 1490893250880,
+    "covers": [{
+      "url": "http://qiniuimg.qingmang.mobi/image/orion/d534586e7e0f28f2deb1bcda253f9e1a_1920_1080.jpeg",
+      "height": 1080,
+      "width": 1920
+    }],
+    "images": [{
+      "url": "http://link_to_image",
+      "width": 1024,
+      "height": 2048
+    }],
+    "videos": [{
+      "url": "http://api.qingmang.me/v1/video.redirect?url=https://v.qq.com/iframe/preview.html?vid%3Di0388m50vls%26width%3D500%26height%3D375%26auto%3D0",
+      "duration": 501.12,
+      "width": 1920,
+      "height": 1072
+    }],
+    "musics": [{
+      "url": "http://res.wx.qq.com/voice/getvoice?mediaid=MjM5ODQwNDQxNF8yNjUwNjk2MTIx",
+      "name": "2017.03.30"
+    }],
+    "tags": ["美食"],
+    "templateType": "text",
+    "categories": [{
+      "categoryId": "p50",
+      "title": "科技美学"
+    }],
+    "contentUrl": "http://qingmang.me/articles/-8379746561699078860",
 
-    "title": "这是文章的标题",
-    "desc": "这是文章的描述信息",
-    "snippet": "这是文章的摘要信息",
-    "author": "文章的作者",
-    "publishTimestamp": 140000000000,
-    "crawlerTimestamp": 140000000000
+    "webUrl": "文章的原文链接",
+    "appUrl": "文章在应用中打开的链接",
+    "providerName": "科技美学",
+    "providerIcon": "http://img.wdjimg.com/image/orion/e7b233d4c4d93c9c5411429d1b66a7cd_292_292.jpeg",
+    "providerPackageName": "org.wandoujia.mp.kejimx",
   }],
   "hasMore": false
 }
 ```
 
-请求成功后，会返回文章列表 `articles`，其中包含除了文章正文相关内容的相关信息。
+返回的 `articles` 中，包含除了正文相关信息的其它数据。
 
 ### article.dump
 和 `article.list` 类似，也是获得给定分类下的文章列表。但所不同的是，只要返回过 的文章，就不再会重新再提供了，进入分类的文章仅仅会被取走一次。
@@ -327,20 +384,50 @@ TODO 需要举个例子，便于测试
 {
   "ok": true,
   "articles": [{
-    "articleId": 251,
+    "title": "三星Galaxy S8/S8+上手体验",
+    "snippet": "转眼又到2017年的春季，S系列终于有机会上头条，Galaxy S8有没有一雪前耻，更进一步呢？这是我们将要探究的内容。",
+    "author": "科技美学",
+    "publishTimestamp": 1490803200000,
+    "crawlerTimestamp": 1490893250880,
+    "covers": [{
+      "url": "http://qiniuimg.qingmang.mobi/image/orion/d534586e7e0f28f2deb1bcda253f9e1a_1920_1080.jpeg",
+      "height": 1080,
+      "width": 1920
+    }],
+    "images": [{
+      "url": "http://link_to_image",
+      "width": 1024,
+      "height": 2048
+    }],
+    "videos": [{
+      "url": "http://api.qingmang.me/v1/video.redirect?url=https://v.qq.com/iframe/preview.html?vid%3Di0388m50vls%26width%3D500%26height%3D375%26auto%3D0",
+      "duration": 501.12,
+      "width": 1920,
+      "height": 1072
+    }],
+    "musics": [{
+      "url": "http://res.wx.qq.com/voice/getvoice?mediaid=MjM5ODQwNDQxNF8yNjUwNjk2MTIx",
+      "name": "2017.03.30"
+    }],
+    "tags": ["美食"],
+    "templateType": "text",
+    "categories": [{
+      "categoryId": "p50",
+      "title": "科技美学"
+    }],
+    "contentUrl": "http://qingmang.me/articles/-8379746561699078860",
 
-    "title": "这是文章的标题",
-    "desc": "这是文章的描述信息",
-    "snippet": "这是文章的摘要信息",
-    "author": "文章的作者",
-    "publishTimestamp": 140000000000,
-    "crawlerTimestamp": 140000000000,
+    "webUrl": "文章的原文链接",
+    "appUrl": "文章在应用中打开的链接",
+    "providerName": "科技美学",
+    "providerIcon": "http://img.wdjimg.com/image/orion/e7b233d4c4d93c9c5411429d1b66a7cd_292_292.jpeg",
+    "providerPackageName": "org.wandoujia.mp.kejimx",
   }],
   "hasMore": false
 }
 ```
 
-请求成功后，会返回文章列表 `articles`，其中包含除了文章正文相关内容的相关信息。
+同上，返回的 `articles` 中，包含除了正文相关信息的其它数据。
 
 ### article.search
 通过关键字，搜索相关的文章。
@@ -372,7 +459,7 @@ TODO 需要举个例子，便于测试
 }
 ```
 
-请求成功后，会返回文章列表 `articles`，其中包含除了文章正文相关内容的相关信息。
+同上，返回的 `articles` 中，包含除了正文相关信息的其它数据。
 
 ### article.get
 获得给定的文章，包含文章正文。
@@ -391,23 +478,55 @@ TODO 需要举个例子，便于测试
 {
   "ok": true,
   "article": {
-    "articleId": 251,
+    "articleId": -8379746561699078860,
 
-    "title": "这是文章的标题",
-    "desc": "这是文章的描述信息",
-    "snippet": "这是文章的摘要信息",
-    "author": "文章的作者",
-    "publishTimestamp": 140000000000,
-    "crawlerTimestamp": 140000000000,
+    "title": "三星Galaxy S8/S8+上手体验",
+    "snippet": "转眼又到2017年的春季，S系列终于有机会上头条，Galaxy S8有没有一雪前耻，更进一步呢？这是我们将要探究的内容。",
+    "author": "科技美学",
+    "publishTimestamp": 1490803200000,
+    "crawlerTimestamp": 1490893250880,
+    "covers": [{
+      "url": "http://qiniuimg.qingmang.mobi/image/orion/d534586e7e0f28f2deb1bcda253f9e1a_1920_1080.jpeg",
+      "height": 1080,
+      "width": 1920
+    }],
+    "images": [{
+      "url": "http://link_to_image",
+      "width": 1024,
+      "height": 2048
+    }],
+    "videos": [{
+      "url": "http://api.qingmang.me/v1/video.redirect?url=https://v.qq.com/iframe/preview.html?vid%3Di0388m50vls%26width%3D500%26height%3D375%26auto%3D0",
+      "duration": 501.12,
+      "width": 1920,
+      "height": 1072
+    }],
+    "musics": [{
+      "url": "http://res.wx.qq.com/voice/getvoice?mediaid=MjM5ODQwNDQxNF8yNjUwNjk2MTIx",
+      "name": "2017.03.30"
+    }],
+    "tags": ["美食"],
+    "templateType": "text",
+    "categories": [{
+      "categoryId": "p50",
+      "title": "科技美学"
+    }],
+    "contentUrl": "http://qingmang.me/articles/-8379746561699078860",
+
+    "webUrl": "文章的原文链接",
+    "appUrl": "文章在应用中打开的链接",
+    "providerName": "科技美学",
+    "providerIcon": "http://img.wdjimg.com/image/orion/e7b233d4c4d93c9c5411429d1b66a7cd_292_292.jpeg",
+    "providerPackageName": "org.wandoujia.mp.kejimx",
 
     "contentFormat": "raml",
     "content": "正文内容",
     "keywords": [{
-      "word": "早餐",
-      "score": 0.25
+      "word": "s8",
+      "score": 100
     }]
   }
 }
 ```
 
-请求成功后，会返回单篇文章 `article`，包含文章的正文信息。
+请求成功后，会返回包含正文信息的 `article`。
