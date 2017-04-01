@@ -104,13 +104,35 @@ App 审核通过后，会分配一个 `App ID` 和一个 `Secret Key`，其中�
 |:--|:--|:--|:--|:--|
 | app_id | string | 是 | qingmang | 分配给第三方的 App ID |
 | sign | string | 是 | a12ce7f | 根据算法，基于 Secret Key 计算而来的签名信息 |
+| ts | long | 是 | 1491038197 | 当前的时间戳 |
 
 其中，`sign` 的具体算法是：
 ```
-sign = base64(hmac_sha1(App ID + ':' + Secret Key))
+sign = hmac_sha1(Secret Key, App ID + ':' + Timestamp)
 ```
 
-TODO 需要举个例子，便于测试
+一段用来签名的 `Python` 代码如下：
+```python
+#!/usr/bin/env python
+
+import sys
+from hashlib import sha1
+import hmac
+
+if __name__ == "__main__":
+    key = sys.argv[1]
+    appid = sys.argv[2]
+    ts = sys.argv[3]
+    msg = "%s:%s" % (appid, ts)
+    sign = hmac.new(key, msg, sha1).digest()
+    print sign.encode("hex")
+```
+
+可以传入签名和时间戳来计算 `sign`:
+```
+python hmac-sha1.py secret-key app-id 1491038197
+5fc145cab4285f0a29d3c35533d32db1a957b125
+```
 
 #### 返回
 ```json
