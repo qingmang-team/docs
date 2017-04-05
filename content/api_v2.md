@@ -102,7 +102,7 @@ App 审核通过后，会分配一个 `App ID` 和一个 `Secret Key`，其中�
 
 | 参数 | 类型 | 是否必须 | 示例 | 其它说明 |
 |:--|:--|:--|:--|:--|
-| app_id | string | 是 | qingmang | 分配给第三方的 App ID |
+| appid | string | 是 | qingmang | 分配给第三方的 App ID |
 | sign | string | 是 | a12ce7f | 根据算法，基于 Secret Key 计算而来的签名信息 |
 | ts | long | 是 | 1491038197 | 当前的时间戳 |
 
