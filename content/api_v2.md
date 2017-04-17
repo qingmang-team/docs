@@ -197,7 +197,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 
   "subCategories": [{
     "categoryId": "p50",
-    "title": "子分类的名称"
+    "name": "子分类的名称"
   }]
 }
 ```
@@ -222,6 +222,7 @@ python hmac-sha1.py secret-key app-id 1491038197
   "categories": [{
     "categoryId": "assigned_category_id",
     "type": "interest",
+    "name": "分类名",
     "icon": "http://a_icon_for_partener",
     "description": "分类的描述",
   }],
@@ -248,6 +249,7 @@ python hmac-sha1.py secret-key app-id 1491038197
   "category": {
     "categoryId": "assigned_category_id",
     "type": "interest",
+    "name": "分类名",
     "icon": "http://a_icon_for_partener",
     "description": "分类的描述",
   },
