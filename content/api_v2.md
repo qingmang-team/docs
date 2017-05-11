@@ -292,17 +292,17 @@ python hmac-sha1.py secret-key app-id 1491038197
     "url": "http://res.wx.qq.com/voice/getvoice?mediaid=MjM5ODQwNDQxNF8yNjUwNjk2MTIx",
     "name": "2017.03.30"
   }],
-  "tags": ["美食"],
+  "tags": ["三星"],
   "templateType": "text",
   "categories": [{
     "categoryId": "p50",
-    "title": "科技美学"
+    "title": "科技"
   }],
   "contentUrl": "http://qingmang.me/articles/-8379746561699078860",
 
   "webUrl": "文章的原文链接",
   "appUrl": "文章在应用中打开的链接",
-  "providerName": "科技美学",
+  "providerName": "科技",
   "providerIcon": "http://img.wdjimg.com/image/orion/e7b233d4c4d93c9c5411429d1b66a7cd_292_292.jpeg",
   "providerPackageName": "org.wandoujia.mp.kejimx",
 
