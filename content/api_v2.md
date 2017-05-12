@@ -168,9 +168,6 @@ python hmac-sha1.py secret-key app-id 1491038197
   "app": {
     "appId": "qingmang",
     "name": "轻芒杂志",
-    "icon": "http://static.wdjimg.com/rippleweb/images/logo.7b1996ef.png",
-    "desc": "全新的、全面美好的兴趣杂志",
-
     "status": "active"
   }
 }
