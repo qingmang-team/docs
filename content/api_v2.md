@@ -69,6 +69,7 @@ APIs 都会返回一个 Json Object，它的 Code Style 沿用自 `Google Json S
 | unknown_error | 其它的位置错误，描述中会包含具体的信息 |
 
 ### 测试方式
+目前，轻芒 APIs 还处于内测阶段，暂不支持自主注册，如有需求，请联系 hello@qingmang.me 获取 appId。
 
 ## 应用（App）
 每个合作伙伴，在轻芒都是定义成一个应用（App），轻芒会为每个通过审核的 App 分配对应的访问权限和可使用的 Quota。
@@ -78,15 +79,12 @@ APIs 都会返回一个 Json Object，它的 Code Style 沿用自 `Google Json S
 {
   "appId": "assigned_app_id",
   "name": "合作伙伴的名字",
-  "icon": "http://a_icon_for_partener",
-  "desc": "合作伙伴的描述",
-
   "status": "active"
 }
 ```
 
 其中：
-* `appId` 表示对应的 App ID，审核通过后会自动分配，而 `name` `icon` `desc` 则为其它提交的基本信息；
+* `appId` 表示对应的 App ID，审核通过后会自动分配，而 `name` 则为提交的 APP NAME；
 * `status` 表示应用的审核状态，`active` 表示审核通过，`inactive` 表示暂不可用；
 
 ### app.auth
