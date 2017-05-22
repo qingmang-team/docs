@@ -69,7 +69,7 @@ APIs 都会返回一个 Json Object，它的 Code Style 沿用自 `Google Json S
 | unknown_error | 其它的位置错误，描述中会包含具体的信息 |
 
 ### 测试方式
-目前，轻芒 APIs 还处于内测阶段，暂不支持自主注册，如有需求，请联系 hello@qingmang.me 获取 appId。
+目前，轻芒 APIs 还处于内测阶段，暂不支持自主注册，如有需求，请联系 hello@qingmang.me 获取 appId 和 token，该 token 可以直接使用，测试账号不提供 Secret Key。
 
 ## 应用（App）
 每个合作伙伴，在轻芒都是定义成一个应用（App），轻芒会为每个通过审核的 App 分配对应的访问权限和可使用的 Quota。
