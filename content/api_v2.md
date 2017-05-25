@@ -552,7 +552,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 
 
 ### article.readability
-通用转码服务，获取任意 url 的正文以及 title 等基本信息
+通用转码服务，获取任意 url 的正文以及 title 等基本信息,仅支持 post 方法请求。
 
 #### 参数
 
@@ -562,13 +562,16 @@ python hmac-sha1.py secret-key app-id 1491038197
 | url | string | 是 | http://www.pingwest.com/market/ubdc2017-youmeng/?type=1 | 文章的 url |
 | format | string | 否，默认为 html | raml | 文章正文的格式，支持 `html`, `[raml](../raml/intro.md)` |
 
+请求示例：
+
+curl "https://api.qingmang.me/v2/article.readability?token=token&format=raml" -d "http://www.pingwest.com/market/ubdc2017-youmeng/?type="
 
 #### 返回
 ```json
 {
   "ok": true,
   "article": {
-    "articleId": 8761595884994052465,
+    "articleId": "8761595884994052465",
     "title": "2017UBDC：数据的狂欢，全景解读“DI的力量” | PingWest品玩",
     "subtitle":"2017UBDC：数据的狂欢，全景解读“DI的力量” | PingWest品玩",
     "snippet": "今天，2017UBDC全域大数据峰会在北京圆满举行。大会由【友盟+】主办，以“DI的力量”为主题，全景展现大数",
