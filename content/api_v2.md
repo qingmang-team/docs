@@ -551,7 +551,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 请求成功后，会返回包含正文信息的 `article`。
 
 
-### article.readability
+### article.fetch
 通用转码服务，获取任意 url 的正文以及 title 等基本信息，仅支持 post 方法请求。
 
 #### 参数
@@ -576,9 +576,25 @@ curl "https://api.qingmang.me/v2/article.readability?token=abc1234sxba&format=ra
     "subtitle":"2017UBDC：数据的狂欢，全景解读“DI的力量” | PingWest品玩",
     "snippet": "今天，2017UBDC全域大数据峰会在北京圆满举行。大会由【友盟+】主办，以“DI的力量”为主题，全景展现大数",
     "contentFormat": "raml",
-    "content": "正文内容"
+    "content": "正文内容",
+    "images": [{
+      "url": "http://link_to_image",
+      "width": 1024,
+      "height": 2048
+    }],
+    "videos": [{
+      "url": "http://api.qingmang.me/v1/video.redirect?url=https://v.qq.com/iframe/preview.html?vid%3Di0388m50vls%26width%3D500%26height%3D375%26auto%3D0",
+      "duration": 501.12,
+      "width": 1920,
+      "height": 1072
+    }],
+    "musics": [{
+      "url": "http://res.wx.qq.com/voice/getvoice?mediaid=MjM5ODQwNDQxNF8yNjUwNjk2MTIx",
+      "name": "2017.03.30"
+    }]
   }
 }
+
 ```
 
 请求成功后，会返回正文的基本信息。
