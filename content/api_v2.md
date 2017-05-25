@@ -559,7 +559,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 | 参数 | 类型 | 是否必须 | 示例 | 其它说明 |
 |:--|:--|:--|:--|:--|
 | token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
-| url | string | 是 | "http://www.pingwest.com/market/ubdc2017-youmeng/?type=1" | 文章的 url |
+| url | string | 是 | http://www.pingwest.com/market/ubdc2017-youmeng/?type=1 | 文章的 url |
 | format | string | 否，默认为 html | raml | 文章正文的格式，支持 `html`, `[raml](../raml/intro.md)` |
 
 
