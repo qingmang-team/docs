@@ -552,7 +552,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 
 
 ### article.readability
-通用转码服务，获取任意 url 的正文以及 title 等基本信息,仅支持 post 方法请求。
+通用转码服务，获取任意 url 的正文以及 title 等基本信息，仅支持 post 方法请求。
 
 #### 参数
 
@@ -564,7 +564,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 
 请求示例：
 
-curl "https://api.qingmang.me/v2/article.readability?token=token&format=raml" -d "http://www.pingwest.com/market/ubdc2017-youmeng/?type="
+curl "https://api.qingmang.me/v2/article.readability?token=abc1234sxba&format=raml" -d "http://www.pingwest.com/market/ubdc2017-youmeng/?type=1"
 
 #### 返回
 ```json
