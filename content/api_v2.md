@@ -564,7 +564,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 
 请求示例：
 
-curl "https://api.qingmang.me/v2/article.readability?token=abc1234sxba&format=raml" -d "http://www.pingwest.com/market/ubdc2017-youmeng/?type=1"
+curl "https://api.qingmang.me/v2/article.fetch?token=abc1234sxba&format=raml" -d "http://www.pingwest.com/market/ubdc2017-youmeng/?type=1"
 
 #### 返回
 ```json
