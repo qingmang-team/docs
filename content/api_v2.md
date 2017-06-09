@@ -17,6 +17,7 @@
   - [article.dump](#articledump)
   - [article.search](#articlesearch)
   - [article.get](#articleget)
+  - [article.fetch](#articlefetch)
 
 <!-- /MarkdownTOC -->
 
@@ -549,3 +550,44 @@ python hmac-sha1.py secret-key app-id 1491038197
 ```
 
 请求成功后，会返回包含正文信息的 `article`。
+
+
+### article.fetch
+通用转码服务，获取任意 url 的正文以及 title 等基本信息，仅支持 post 方法请求。
+
+#### 参数
+
+| 参数 | 类型 | 是否必须 | 示例 | 其它说明 |
+|:--|:--|:--|:--|:--|
+| token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
+| url | string | 是 | http://www.pingwest.com/market/ubdc2017-youmeng/?type=1 | 文章的 url |
+| format | string | 否，默认为 html | raml | 文章正文的格式，支持 `html`, `raml` |
+| js | int | 否，默认为 0 | 0 | 文章正文是否需要 javascript 动态加载|
+
+
+请求示例：
+
+curl "https://api.qingmang.me/v2/article.fetch?token=abc1234sxba&format=raml" -d "http://www.pingwest.com/market/ubdc2017-youmeng/?type=1"
+
+#### 返回
+```json
+{
+  "ok": true,
+  "article": {
+    "articleId": "8761595884994052465",
+    "title": "2017UBDC：数据的狂欢，全景解读“DI的力量” | PingWest品玩",
+    "subtitle":"2017UBDC：数据的狂欢，全景解读“DI的力量” | PingWest品玩",
+    "snippet": "今天，2017UBDC全域大数据峰会在北京圆满举行。大会由【友盟+】主办，以“DI的力量”为主题，全景展现大数",
+    "contentFormat": "raml",
+    "content": "正文内容",
+    "images": [{
+      "url": "http://link_to_image",
+      "width": 1024,
+      "height": 2048
+    }]
+  }
+}
+
+```
+
+请求成功后，会返回正文的基本信息。
