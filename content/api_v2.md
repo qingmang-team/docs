@@ -561,8 +561,10 @@ python hmac-sha1.py secret-key app-id 1491038197
 |:--|:--|:--|:--|:--|
 | token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
 | url | string | 是 | http://www.pingwest.com/market/ubdc2017-youmeng/?type=1 | 文章的 url |
-| format | string | 否，默认为 html | raml | 文章正文的格式，支持 `html`, `[raml](../raml/intro.md)` |
+| format | string | 否，默认为 html | raml | 文章正文的格式，支持 `html`, `raml` |
 | js | int | 否，默认为 0 | 0 | 文章正文是否需要 javascript 动态加载|
+
+
 请求示例：
 
 curl "https://api.qingmang.me/v2/article.fetch?token=abc1234sxba&format=raml" -d "http://www.pingwest.com/market/ubdc2017-youmeng/?type=1"
