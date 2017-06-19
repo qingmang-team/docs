@@ -17,7 +17,7 @@
   - [article.dump](#articledump)
   - [article.search](#articlesearch)
   - [article.get](#articleget)
-  - [article.fetch（通用转码服务）](#articlefetch通用转码服务)
+  - [article.fetch（通用转码服务）](#articlefetch通用转码服务)
 - [转码格式说明（ RAML 说明）](#转码格式说明-raml-说明)
 
 <!-- /MarkdownTOC -->
