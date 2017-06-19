@@ -17,7 +17,7 @@
   - [article.dump](#articledump)
   - [article.search](#articlesearch)
   - [article.get](#articleget)
-  - [article.fetch - 通用转码服务](#articlefetch-通用转码服务)
+  - [article.fetch（通用转码服务）](#article.fetch （通用转码服务）)
 
 <!-- /MarkdownTOC -->
 
