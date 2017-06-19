@@ -324,7 +324,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 | short_text | 短文本 |
 | video | 视频 |
 | image | 单图 |
-| galary | 多图 |
+| gallery | 多图 |
 
 ### article.list
 获得给定分类下的文章列表。
@@ -459,7 +459,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 | token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
 | query | string | 是 | Google | 搜索的关键词 |
 | category | string | 否 | i1567 | 从 `category.list` 中获取的 `categoryId` 信息，如果添加该参数，则从该分类下进行搜索 |
-| sort | string | 否，默认为相关度（relevant） | time | 搜索结果返回的方式，支持 `relevant` 按照相关度从高到低返回，`time` 按照时间从新到旧返回 |
+| sort | string | 否，默认为相关度（relevance） | time | 搜索结果返回的方式，支持 `relevance` 按照相关度从高到低返回，`time` 按照时间从新到旧返回 |
 
 #### 返回
 ```json
@@ -490,7 +490,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 |:--|:--|:--|:--|:--|
 | token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
 | id | string | 是 | 12345 | 文章的 id，即 article 中的 `articleId` |
-| format | string | 否，默认为 html（html) | raml | 文章正文的格式，支持 `html`, `[raml](../raml/intro.md)` |
+| format | string | 否，默认为 html（html) | raml | 文章正文的格式，支持 `html`, [raml](https://github.com/qingmang-team/docs/blob/db3eddc95da2594ea71c5866d220d36c23eddceb/raml/intro.md)|
 | need_keywords | boolean | 否，默认为 false | true | 是否需要计算正文的关键字，默认为 false |
 
 #### 返回
@@ -553,7 +553,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 
 
 ### article.fetch
-通用转码服务，获取任意 url 的正文以及 title 等基本信息，仅支持 post 方法请求。
+通用转码服务，获取任意 url 的正文以及 title 等信息。
 
 #### 参数
 
@@ -566,8 +566,9 @@ python hmac-sha1.py secret-key app-id 1491038197
 
 
 请求示例：
+python 版
 
-curl "https://api.qingmang.me/v2/article.fetch?token=abc1234sxba&format=raml" -d "http://www.pingwest.com/market/ubdc2017-youmeng/?type=1"
+curl "https://api.qingmang.me/v2/article.fetch?token=abc1234sxba&format=raml&js=0&url=http://www.pingwest.com/market/ubdc2017-youmeng"
 
 #### 返回
 ```json
@@ -590,4 +591,4 @@ curl "https://api.qingmang.me/v2/article.fetch?token=abc1234sxba&format=raml" -d
 
 ```
 
-请求成功后，会返回正文的基本信息。
+获得给定url的文章，包含文章正文。
