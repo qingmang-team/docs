@@ -17,7 +17,7 @@
   - [article.dump](#articledump)
   - [article.search](#articlesearch)
   - [article.get](#articleget)
-  - [article.fetch](#articlefetch)
+  - [article.fetch（通用转码服务）](#articlefetch通用转码服务)
 
 <!-- /MarkdownTOC -->
 
@@ -552,7 +552,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 请求成功后，会返回包含正文信息的 `article`。
 
 
-### article.fetch
+### article.fetch（通用转码服务）
 通用转码服务，获取任意 url 的正文以及 title 等信息。
 
 #### 参数
