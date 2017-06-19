@@ -592,3 +592,13 @@ curl "https://api.qingmang.me/v2/article.fetch?token=abc1234sxba&format=raml&js=
 ```
 
 获得给定url的文章，包含文章正文。
+
+### 转码格式说明（ RAML 说明）
+大部分网络上的内容，都是以 HTML 格式的 Web 页面进行提供的。但 HTML 具有一定的局限性，在很多场合并不适合，包括：
+* 需要极高性能
+* 需要调整排版样式
+* 需要剥离无关的信息
+
+轻芒提供了将 HTML 格式的 Web 页面和 App 内页面抽取正文的服务，并将正文内容按照自定义的结构化格式提供。
+
+格式介绍，请阅读文档：[RAML（Ripple Article Markup Language）&raquo;](./raml/intro.md)
