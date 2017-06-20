@@ -602,4 +602,4 @@ curl "https://api.qingmang.me/v2/article.fetch?token=abc1234sxba&format=raml&js=
 
 轻芒 APIs 提供将 HTML 格式的 Web 页面和 App 内页面抽取正文的服务，并将正文内容按照自定义的结构化格式（即：RAML ）提供。
 
-格式详细说明，请阅读文档：[RAML（Ripple Article Markup Language）&raquo;](./raml/intro.md)
+格式详细说明，请阅读文档：[RAML（Ripple Article Markup Language）&raquo;](https://github.com/qingmang-team/docs/blob/master/raml/intro.md)
