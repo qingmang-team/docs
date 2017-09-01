@@ -195,7 +195,7 @@ python hmac-sha1.py secret-key app-id 1491038197
   "subCategories": [{
     "categoryId": "p50",
     "name": "子分类的名称",
-    "articleNumber": 2048
+    "articleNumber": 2048
   }]
 }
 ```
