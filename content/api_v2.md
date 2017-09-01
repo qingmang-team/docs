@@ -194,7 +194,8 @@ python hmac-sha1.py secret-key app-id 1491038197
 
   "subCategories": [{
     "categoryId": "p50",
-    "name": "子分类的名称"
+    "name": "子分类的名称",
+    "articleNumber": 2048
   }]
 }
 ```
@@ -211,7 +212,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 | 参数 | 类型 | 是否必须 | 示例 | 其它说明 |
 |:--|:--|:--|:--|:--|
 | token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
-
+| need_stat | boolean | 否，默认为 false | false | 是否需要子分类的文章数 |
 #### 返回
 ```json
 {
