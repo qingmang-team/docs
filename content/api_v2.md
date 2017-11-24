@@ -452,7 +452,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 同上，返回的 `articles` 中，包含除了正文相关信息的其它数据。
 
 ### article.search
-通过关键字，搜索相关的文章。
+通过关键字，在指定 app 内搜索相关的文章。
 
 #### 参数
 
@@ -460,7 +460,7 @@ python hmac-sha1.py secret-key app-id 1491038197
 |:--|:--|:--|:--|:--|
 | token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
 | query | string | 是 | Google | 搜索的关键词 |
-| category_id | string | 是 | i1567 | 从 `category.list` 中获取的 `categoryId` 信息，如果添加该参数，则从该分类下进行搜索 |
+| category_id | string | 是 | acom.qdaily.ui | 只支持 category 类型为 app（即以字母 a 开头的 category_id）的文章搜索 |
 | sort | string | 否，默认为相关度（relevance） | time | 搜索结果返回的方式，支持 `relevance` 按照相关度从高到低返回，`time` 按照时间从新到旧返回 |
 
 #### 返回
