@@ -159,10 +159,10 @@ RAML 中每一个 List 的元素，都是一个段落，其中包含一系列的
 类似 tag 为 img、a 的 markup，会有一些 web 地址信息，这时候，就需要通过 source 来存储对应的 web 地址。
 
 ## 示例
-* [图文文章](./samples/wx_text_and_image.raml)。原文参见[这里](http://mp.weixin.qq.com/s?__biz=MzAwODIyMTUyNQ==&mid=2651025950&idx=2&sn=ced5e572286a44a75f3bf352cb2e7915&chksm=8085f424b7f27d3241bb7bb25eb44ce14eb24c53685a8d2cd84266f9e781d5d3d0f5cbc7ec28#rd)，包含图片、文字、引用等，用了非常多的样式信息，经过重新的排版转义后，生成样式更为统一的 RAML，渲染效果参见[这里](http://qingmang.me/magazines/7358/2017/02/12/7217265657588929268/)；
-* [文本排版](./samples/wx_markup_and_li.raml)。原文参见[这里](http://mp.weixin.qq.com/s?__biz=MjM5MjYxNzY2NA==&mid=2650454589&idx=1&sn=b824e271ca187970e05bc14b5580f8fe&chksm=bead9f9289da1684645f13cd8725b4e23d5e672343602cb4d8530f8b1bf67c5626bc2da762fd#rd)，这是一篇包含很多文本样式的文章，转义后的效果参见[这里](http://qingmang.me/magazines/4880/2017/03/06/7917657200391947878/)；
-* [视频和链接](./samples/wx_text_and_image.raml)。原文参见[这里](http://mp.weixin.qq.com/s?__biz=MjM5Mzc5NTk1OQ==&mid=2653005489&idx=1&sn=193dd71d6677073ffbe845b221c0196d&chksm=bd449ca98a3315bff0e405127b18ee4f19ccfedd95dde37b90f851901e193ecb34868ebf438c#rd)，有非常多的链接和视频，转义后的效果参见[这里](http://qingmang.me/magazines/7491/2017/03/06/3688605879307014948/)；
-* [表格](./samples/table.raml)。原文参见[这里](http://m.pcauto.com.cn/x/957/9577254_all.html)，包含很多表格信息，转义后的效果参见[这里](http://qingmang.me/magazines/5678/-4443257712335137611/)；
+* [图文文章](./samples/wx_text_and_image.raml)。原文参见[这里](http://mp.weixin.qq.com/s?__biz=MzAwODIyMTUyNQ==&mid=2651025950&idx=2&sn=ced5e572286a44a75f3bf352cb2e7915&chksm=8085f424b7f27d3241bb7bb25eb44ce14eb24c53685a8d2cd84266f9e781d5d3d0f5cbc7ec28#rd)，包含图片、文字、引用等，用了非常多的样式信息，经过重新的排版转义后，生成样式更为统一的 RAML，渲染效果参见[这里](http://qingmang.me/magazines/7358/2017/02/12/7217265657588929268/?fulltext=1)；
+* [文本排版](./samples/wx_markup_and_li.raml)。原文参见[这里](http://mp.weixin.qq.com/s?__biz=MjM5MjYxNzY2NA==&mid=2650454589&idx=1&sn=b824e271ca187970e05bc14b5580f8fe&chksm=bead9f9289da1684645f13cd8725b4e23d5e672343602cb4d8530f8b1bf67c5626bc2da762fd#rd)，这是一篇包含很多文本样式的文章，转义后的效果参见[这里](http://qingmang.me/magazines/4880/2017/03/06/7917657200391947878/?fulltext=1)；
+* [视频和链接](./samples/wx_text_and_image.raml)。原文参见[这里](http://mp.weixin.qq.com/s?__biz=MjM5Mzc5NTk1OQ==&mid=2653005489&idx=1&sn=193dd71d6677073ffbe845b221c0196d&chksm=bd449ca98a3315bff0e405127b18ee4f19ccfedd95dde37b90f851901e193ecb34868ebf438c#rd)，有非常多的链接和视频，转义后的效果参见[这里](http://qingmang.me/magazines/7491/2017/03/06/3688605879307014948/?fulltext=1)；
+* [表格](./samples/table.raml)。原文参见[这里](http://m.pcauto.com.cn/x/957/9577254_all.html)，包含很多表格信息，转义后的效果参见[这里](http://qingmang.me/magazines/5678/-4443257712335137611/?fulltext=1)；
 
 ## 工具
 * [Android Demo](https://github.com/lianpian/raml-sdk-android)。在 Android 上实现 RAML 的解析和渲染；
