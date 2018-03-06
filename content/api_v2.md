@@ -399,7 +399,8 @@ python hmac-sha1.py secret-key app-id 1491038197
 |:--|:--|:--|:--|:--|
 | token | string | 是 | abc1234sxba | 从 `app.auth` 中获得的 token 信息 |
 | category_id | string | 是 | i1567 | 从 `category.list` 中获取的 `categoryId` 信息 |
-| reset | boolean | 否，默认为 false | true | 是否重置全部已读信息，如果需要从头再取，则需要将该参数设置为 true |
+| reset | boolean | 否，默认为 false | true | 是否重置全部已读文章，如果需要从头再取，则需要将该参数设置为 true |
+| test | boolean | 否，默认为 false | true | 是否是测试环境使用，如果是测试环境，已读文章记录将与生产环境隔离 |
 
 #### 返回
 ```json
