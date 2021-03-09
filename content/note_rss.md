@@ -1,6 +1,6 @@
 # 轻芒马克输出 RSS 开发者文档
 
-文档用于详述马克输出 RSS 相关话题，反馈建议可直接提 issue 或者 pr，或者加微信 hiqingmang 进开发者群参与讨论。
+该文档用于详述马克输出 RSS 相关话题，反馈建议可直接提 issue 或者 pr，或者加微信 hiqingmang 进开发者群参与讨论。
 
 ### 已经开发的应用合集
 
@@ -107,7 +107,7 @@ https://qingmang.me/users/11/feed/
 
 ```html
 <footer>
-     <!--    footer 表示最后的 section，tag 也一定会有-->
+     <!--    footer 表示最后的 section，tag 一定会有-->
 
     <em>
     2021-03-05 18:56
