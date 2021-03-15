@@ -90,7 +90,7 @@ https://qingmang.me/users/11/feed/
 
 ```html
 <aside>
-    <!--    第二个 p tag 是用户自己写的笔记内容，可能没有-->
+    <!--    第二个 aside tag 是用户自己写的笔记内容，可能没有-->
 
     <!--    添加的笔记图片，一般在笔记内容的最前边，图片可选-->
     <figure>
