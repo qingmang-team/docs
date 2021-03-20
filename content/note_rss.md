@@ -12,7 +12,7 @@
 - [囧哥：iOS 马克发送到 Flomo 捷径](https://www.icloud.com/shortcuts/e88a46a77df9430fb8339de742a8ffdb)
 - [ERR_CONNECTION_RESET：自动同步到 flomo 和 Telegram bot](https://github.com/dake0805/Qingmang-mark)
 - [extrastu：同步到 flomo 的 chrome 插件](https://www.notion.so/flomo-Plus-f440171cffbe40b997e6c45add04f658)
-- [懒童一枚：将 RSS 转换为 Json 或者网页<div>模块](https://github.com/liutongl5/QMark-API)
+- [懒童一枚：将 RSS 转换为 Json 或者网页 div 模块](https://github.com/liutongl5/QMark-API)
 
 ### 结构执行 RSS 2.0 标准
 
