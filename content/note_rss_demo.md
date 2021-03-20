@@ -96,12 +96,12 @@ Telegram Bot 示例：
 
 ![img](http://statics01.qingmang.mobi/5588dc16870b.jpg)
 
-## 懒童一枚：将 RSS 转换为 Json 或者网页<div>模块
+## 懒童一枚：将 RSS 转换为 Json 或者网页 div 模块
 
 作者：懒童一枚
 
 项目地址：https://github.com/liutongl5/QMark-API
 
-介绍：可以将轻芒杂志马克输出 api 的 rss 转换为 json、含有class类名的HTML网页<div>模块、Markdown（待完成），方便进行调用或者二次开发。
+介绍：可以将轻芒杂志马克输出 api 的 rss 转换为 json、含有class类名的HTML网页 div 模块、Markdown（待完成），方便进行调用或者二次开发。
 
 ![img](http://statics01.qingmang.mobi/65db0f30870b.jpg)
