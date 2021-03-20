@@ -4,13 +4,15 @@
 
 ### 已经开发的应用合集
 
-目前有以下一些应用，并持续更新中，感谢开发者们的贡献和分享；这里只是个列表，具体可看[这个文档](https://withqingmang.feishu.cn/docs/doccnSlQICPplouvsSAFVk38h7r)，里边有更详细的说明。
+目前有以下一些应用，并持续更新中，感谢开发者们的贡献和分享；这里只是个列表，具体可看[这个文档](https://github.com/qingmang-team/docs/blob/master/content/note_rss_demo.md)，里边有更详细的说明。
 
 - [大熊：博客主页的阅读动态](https://bearchao.com/)
 - [钱争予：竖排中文 DEMO](https://realfish.github.io/anti-chronological-feed/)，[源码地址](https://github.com/realfish/anti-chronological-feed)
-- [囧哥：iOS 马克发送到 Flomo 捷径](https://t.me/qingmang_mark_bot)
-- [ERR_CONNECTION_RESET：自动同步到 flomo](https://github.com/dake0805/Qingmang-mark)
+- [KyXu：将马克同步至 Slack](https://slack.com/apps/A0F81R7U7-rss)
+- [囧哥：iOS 马克发送到 Flomo 捷径](https://www.icloud.com/shortcuts/e88a46a77df9430fb8339de742a8ffdb)
+- [ERR_CONNECTION_RESET：自动同步到 flomo 和 Telegram bot](https://github.com/dake0805/Qingmang-mark)
 - [extrastu：同步到 flomo 的 chrome 插件](https://www.notion.so/flomo-Plus-f440171cffbe40b997e6c45add04f658)
+- [懒童一枚：将 RSS 转换为 Json 或者网页<div>模块](https://github.com/liutongl5/QMark-API)
 
 ### 结构执行 RSS 2.0 标准
 
@@ -118,6 +120,10 @@ https://qingmang.me/users/11/feed/
     </span>
 </footer>
 ```
+
+### 马克正文图片防盗链问题
+
+马克正文图片用的是文章里的原始链接，还请注意有些网站的图片防盗链问题，同时用户自己写的 annotation 里上传的图片不受防盗链的影响。
 
 ### 马克 web url 权限
 
