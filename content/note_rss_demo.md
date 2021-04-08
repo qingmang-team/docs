@@ -105,3 +105,13 @@ Telegram Bot 示例：
 介绍：可以将轻芒杂志马克输出 api 的 rss 转换为 json、含有class类名的HTML网页 div 模块、Markdown（待完成），方便进行调用或者二次开发。
 
 ![img](http://statics01.qingmang.mobi/65db0f30870b.jpg)
+
+
+## 雨忆：将马克同步至 井盖Chat
+
+作者：雨忆
+
+介绍：新建空白 channel，并勾选【订阅频道】, 在频道配置中的 RSS 规则中输入轻芒马克 的 RSS 地址就可以轻松搭建一个轻芒马克的 channel。井盖Chat 是一个类似 Slack 的分频道聊天工具，各种好处和同步马克内容到 Slack 一致。
+
+![img](https://ark-perm.17173cdn.com/ark/attachments/9f58347b-aace-46a2-9902-964d1f3d34d6.png)
+
