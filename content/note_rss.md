@@ -109,12 +109,7 @@ https://qingmang.me/users/11/feed/
 
 ```html
 <footer>
-     <!--    footer 表示最后的 section，tag 一定会有-->
-
-    <em>
-    2021-03-05 18:56
-    </em>
-    &middot;
+     <!--    footer 表示最后的 section，可能没有-->
     <span>
     <!--      点亮的灯泡数，可选-->💡
     </span>
